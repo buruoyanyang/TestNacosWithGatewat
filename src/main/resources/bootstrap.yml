@@ -1,0 +1,33 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: test-gateway
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: ${common.nacos.config.server}
+        # 命名空间
+        namespace: ${common.nacos.config.namespace:public}
+#      config:
+#        import-check:
+#          enabled: false
+#        # 配置中心地址
+#        server-addr: ${common.nacos.config.server}
+#        namespace: ${common.nacos.config.namespace:public}
+#        # 配置文件格式
+#        file-extension: yml
+  profiles:
+#    #采用灵活的参数配置 在pom.xml中定义不同的环境 打包时指定配置文件打包
+    active: dev
+logging:
+  config: classpath:log4j2.xml
+  level:
+    com:
+      alibaba:
+        nacos:
+          client:
+            config:
+              impl: warn
+            naming: warn

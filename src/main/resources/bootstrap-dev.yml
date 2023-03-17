@@ -1,0 +1,7 @@
+common:
+  nacos:
+    config:
+      #Nacos 服务地址
+      server: 10.14.230.94:18848
+      #Nacos 命名空间
+      namespace: public
